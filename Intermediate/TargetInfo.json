@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "WitchGraduate",
+			"Path": "D:\\Documents\\Projects\\WitchGraduate\\Source\\WitchGraduate.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "WitchGraduateEditor",
+			"Path": "D:\\Documents\\Projects\\WitchGraduate\\Source\\WitchGraduateEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

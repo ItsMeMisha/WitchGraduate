@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Documents\\Projects\\WitchGraduate\\Source\\WitchGraduate\\WitchGraduate.Build.cs",
+		"D:\\Documents\\Projects\\WitchGraduate\\Source\\WitchGraduate.Target.cs",
+		"D:\\Documents\\Projects\\WitchGraduate\\Source\\WitchGraduateEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.1"
+}

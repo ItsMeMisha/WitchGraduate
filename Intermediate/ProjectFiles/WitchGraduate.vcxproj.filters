@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\WitchGraduate.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{64E79C7D-F832-49EA-A364-ECD05DB3090B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\WitchGraduate.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\WitchGraduateEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{7A00F0CC-4D5E-40A8-839D-7F061D8ECBC0}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\WitchGraduate">
+      <UniqueIdentifier>{129C6903-DD71-49E1-822C-547AF0B8734C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\WitchGraduate\WitchGraduate.Build.cs">
+      <Filter>Source\WitchGraduate</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\WitchGraduate\WitchGraduate.cpp">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\WitchGraduate\WitchGraduate.h">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\WitchGraduate\WitchGraduateCharacter.cpp">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\WitchGraduate\WitchGraduateCharacter.h">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\WitchGraduate\WitchGraduateGameMode.cpp">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\WitchGraduate\WitchGraduateGameMode.h">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\WitchGraduate\WitchGraduatePlayerController.cpp">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\WitchGraduate\WitchGraduatePlayerController.h">
+      <Filter>Source\WitchGraduate</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
