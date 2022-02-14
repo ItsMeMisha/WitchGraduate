@@ -11,6 +11,7 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "Engine/SkeletalMesh.h"
 
 AWitchGraduateCharacter::AWitchGraduateCharacter()
 {
@@ -33,7 +34,7 @@ AWitchGraduateCharacter::AWitchGraduateCharacter()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when character does
 	CameraBoom->TargetArmLength = 800.f;
-	CameraBoom->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
+	CameraBoom->SetRelativeRotation(FRotator(325.f, 45.f, 0.f));
 	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
 	// Create a camera...
@@ -55,6 +56,28 @@ AWitchGraduateCharacter::AWitchGraduateCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+
+	//My code for skeletal mesh 
+	VisualMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+	VisualMesh->SetupAttachment(RootComponent);
+
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> ManVisualAsset(TEXT("SkeletalMesh'/Game/Mannequin/Character/Mesh/SK_Mannequin.SK_Mannequin'"));
+		
+	if (ManVisualAsset.Succeeded())
+	{
+	    VisualMesh->SetSkeletalMesh(ManVisualAsset.Object);
+	    VisualMesh->SetRelativeLocation(FVector(0.0f, 0.0f, -95.5f));
+		VisualMesh->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	}
+/*
+	//Animation experiments
+	static ConstructorHelpers::FObjectFinder<UAnimSequence> anim(TEXT("AnimSequence'/Game/Mannequin/Animations/ThirdPersonIdle.ThirdPersonIdle'"));
+	Anim = anim.Object;
+	Anim->SetSkeleton(ManVisualAsset.Object->Skeleton); */
+
+	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> AnimObj(TEXT("AnimBlueprint'/Game/Animations/Example.Example'"));
+	VisualMesh->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+	VisualMesh->SetAnimInstanceClass(AnimObj.Object->GeneratedClass);
 }
 
 void AWitchGraduateCharacter::Tick(float DeltaSeconds)

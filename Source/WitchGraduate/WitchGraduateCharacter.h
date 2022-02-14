@@ -11,6 +11,8 @@ class AWitchGraduateCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+
+
 public:
 	AWitchGraduateCharacter();
 
@@ -24,6 +26,10 @@ public:
 	/** Returns CursorToWorld subobject **/
 	FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
 
+/*	bool IdlePlaying = false;
+	//Experiments with animations
+	UPROPERTY(VisibleAnywhere)
+	UAnimSequence* Anim;*/
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -36,5 +42,11 @@ private:
 	/** A decal that projects to the cursor location. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UDecalComponent* CursorToWorld;
+
+	/** Mesh*/
+	UPROPERTY(VisibleAnywhere)
+	USkeletalMeshComponent* VisualMesh;
+
+
 };
 

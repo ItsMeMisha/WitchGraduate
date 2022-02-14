@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\WitchGraduate.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{64E79C7D-F832-49EA-A364-ECD05DB3090B}</UniqueIdentifier>
+      <UniqueIdentifier>{62C3D825-4268-4431-BF79-F55DA70A47DA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\WitchGraduate.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\WitchGraduateEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{7A00F0CC-4D5E-40A8-839D-7F061D8ECBC0}</UniqueIdentifier>
+      <UniqueIdentifier>{B72BC9A0-1F7C-41AE-843B-2FDA231AAF05}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\WitchGraduate">
-      <UniqueIdentifier>{129C6903-DD71-49E1-822C-547AF0B8734C}</UniqueIdentifier>
+      <UniqueIdentifier>{6FA0E29A-46B3-4BBA-BC96-72DEF3633F70}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\WitchGraduate\WitchGraduate.Build.cs">
       <Filter>Source\WitchGraduate</Filter>
@@ -58,6 +60,18 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\WitchGraduate\WitchGraduatePlayerController.h">
       <Filter>Source\WitchGraduate</Filter>
+    </ClInclude>
+    <Filter Include="Source\WitchGraduate\Private">
+      <UniqueIdentifier>{42893B4B-0E20-4D97-A8F6-A56E46D87DAF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\WitchGraduate\Private\WitchGraduateAnim.cpp">
+      <Filter>Source\WitchGraduate\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\WitchGraduate\Public">
+      <UniqueIdentifier>{6C89BE28-2673-4C33-99DE-4EC258EF6EFF}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\WitchGraduate\Public\WitchGraduateAnim.h">
+      <Filter>Source\WitchGraduate\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,6 +7,8 @@
 #include "WitchGraduateCharacter.h"
 #include "Engine/World.h"
 
+#include <cstdio>
+
 AWitchGraduatePlayerController::AWitchGraduatePlayerController()
 {
 	bShowMouseCursor = true;

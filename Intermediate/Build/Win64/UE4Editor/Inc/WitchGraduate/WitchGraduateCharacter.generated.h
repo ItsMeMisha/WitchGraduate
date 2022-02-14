@@ -61,7 +61,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateCharacter); \
 #define WitchGraduate_Source_WitchGraduate_WitchGraduateCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__TopDownCameraComponent() { return STRUCT_OFFSET(AWitchGraduateCharacter, TopDownCameraComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(AWitchGraduateCharacter, CameraBoom); } \
-	FORCEINLINE static uint32 __PPO__CursorToWorld() { return STRUCT_OFFSET(AWitchGraduateCharacter, CursorToWorld); }
+	FORCEINLINE static uint32 __PPO__CursorToWorld() { return STRUCT_OFFSET(AWitchGraduateCharacter, CursorToWorld); } \
+	FORCEINLINE static uint32 __PPO__VisualMesh() { return STRUCT_OFFSET(AWitchGraduateCharacter, VisualMesh); }
 
 
 #define WitchGraduate_Source_WitchGraduate_WitchGraduateCharacter_h_9_PROLOG
