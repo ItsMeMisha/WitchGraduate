@@ -15,6 +15,10 @@
 
 AWitchGraduateCharacter::AWitchGraduateCharacter()
 {
+	ProjectileClass = AProjectile::StaticClass();
+	if (!ProjectileClass)
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("No Projectile class"));
+
 	// Set size for player capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 

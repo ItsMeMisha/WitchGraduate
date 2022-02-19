@@ -7,8 +7,7 @@
 /**
  * 
  */
-class WITCHGRADUATE_API MyClass
-{
+class WITCHGRADUATE_API MyClass {
 public:
 	MyClass();
 	~MyClass();

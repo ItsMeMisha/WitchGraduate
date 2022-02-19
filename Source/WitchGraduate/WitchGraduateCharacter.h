@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Projectile.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "WitchGraduateCharacter.generated.h"
@@ -26,10 +27,10 @@ public:
 	/** Returns CursorToWorld subobject **/
 	FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
 
-/*	bool IdlePlaying = false;
-	//Experiments with animations
-	UPROPERTY(VisibleAnywhere)
-	UAnimSequence* Anim;*/
+
+	UPROPERTY(EditAnywhere, Category = Projectile)
+	UClass* ProjectileClass;
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
