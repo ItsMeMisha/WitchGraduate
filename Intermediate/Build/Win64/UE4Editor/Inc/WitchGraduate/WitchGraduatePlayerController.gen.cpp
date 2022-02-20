@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduatePlayerController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWitchGraduatePlayerController, 97082900);
+	IMPLEMENT_CLASS(AWitchGraduatePlayerController, 2838452408);
 	template<> WITCHGRADUATE_API UClass* StaticClass<AWitchGraduatePlayerController>()
 	{
 		return AWitchGraduatePlayerController::StaticClass();

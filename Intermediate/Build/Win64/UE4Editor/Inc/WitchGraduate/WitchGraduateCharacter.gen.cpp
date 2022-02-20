@@ -128,7 +128,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWitchGraduateCharacter, 1197109922);
+	IMPLEMENT_CLASS(AWitchGraduateCharacter, 2738002302);
 	template<> WITCHGRADUATE_API UClass* StaticClass<AWitchGraduateCharacter>()
 	{
 		return AWitchGraduateCharacter::StaticClass();

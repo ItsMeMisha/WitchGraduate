@@ -39,7 +39,7 @@ public: \
 	NO_API AWitchGraduateCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWitchGraduateCharacter) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AWitchGraduateCharacter); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateCharacter); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateCharacter); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AWitchGraduateCharacter(AWitchGraduateCharacter&&); \
@@ -54,7 +54,7 @@ private: \
 	NO_API AWitchGraduateCharacter(const AWitchGraduateCharacter&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AWitchGraduateCharacter); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateCharacter); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWitchGraduateCharacter)
 
 

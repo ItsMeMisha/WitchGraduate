@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduate_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x08084A44,
+				0xC9093721,
 				0x11133DA2,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -39,7 +39,7 @@ public: \
 	WITCHGRADUATE_API AWitchGraduateGameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWitchGraduateGameMode) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(WITCHGRADUATE_API, AWitchGraduateGameMode); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateGameMode); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateGameMode); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	WITCHGRADUATE_API AWitchGraduateGameMode(AWitchGraduateGameMode&&); \
@@ -54,7 +54,7 @@ private: \
 	WITCHGRADUATE_API AWitchGraduateGameMode(const AWitchGraduateGameMode&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(WITCHGRADUATE_API, AWitchGraduateGameMode); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateGameMode); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduateGameMode); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWitchGraduateGameMode)
 
 

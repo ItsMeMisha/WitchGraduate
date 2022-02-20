@@ -39,7 +39,7 @@ public: \
 	NO_API AWitchGraduatePlayerController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWitchGraduatePlayerController) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AWitchGraduatePlayerController); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduatePlayerController); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduatePlayerController); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AWitchGraduatePlayerController(AWitchGraduatePlayerController&&); \
@@ -54,7 +54,7 @@ private: \
 	NO_API AWitchGraduatePlayerController(const AWitchGraduatePlayerController&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AWitchGraduatePlayerController); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduatePlayerController); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWitchGraduatePlayerController); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWitchGraduatePlayerController)
 
 

@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWitchGraduateGameMode, 496636296);
+	IMPLEMENT_CLASS(AWitchGraduateGameMode, 1669631440);
 	template<> WITCHGRADUATE_API UClass* StaticClass<AWitchGraduateGameMode>()
 	{
 		return AWitchGraduateGameMode::StaticClass();
