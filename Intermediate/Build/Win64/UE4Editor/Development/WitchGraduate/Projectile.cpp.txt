@@ -1,0 +1,11 @@
+D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Development\WitchGraduate\Definitions.WitchGraduate.h
+D:\Documents\Projects\WitchGraduate\Source\WitchGraduate\Public\Projectile.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/SphereComponent.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SphereComponent.generated.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Inc\WitchGraduate\Projectile.generated.h
