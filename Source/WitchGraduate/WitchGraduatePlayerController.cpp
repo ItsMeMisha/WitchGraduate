@@ -6,6 +6,9 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "WitchGraduateCharacter.h"
 #include "Engine/World.h"
+#include "Projectile.h"
+
+#include <cstdio>
 
 AWitchGraduatePlayerController::AWitchGraduatePlayerController()
 {
@@ -37,6 +40,9 @@ void AWitchGraduatePlayerController::SetupInputComponent()
 	InputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AWitchGraduatePlayerController::MoveToTouchLocation);
 
 	InputComponent->BindAction("ResetVR", IE_Pressed, this, &AWitchGraduatePlayerController::OnResetVR);
+
+	// throwing Projectile
+	InputComponent->BindAction("ThrowProjectile", IE_Pressed, this, &AWitchGraduatePlayerController::OnThrowProjectile);
 }
 
 void AWitchGraduatePlayerController::OnResetVR()
@@ -109,4 +115,43 @@ void AWitchGraduatePlayerController::OnSetDestinationReleased()
 {
 	// clear flag to indicate we should stop updating the destination
 	bMoveToMouseCursor = false;
+}
+
+void AWitchGraduatePlayerController::OnThrowProjectile() {
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("ThrowProjectile"));
+	if (AWitchGraduateCharacter* MyPawn = Cast<AWitchGraduateCharacter>(GetPawn())) {
+		// Attempt to fire a projectile.
+		if (MyPawn->ProjectileClass)
+		{
+			FRotator targetDirection;
+			if (MyPawn->GetCursorToWorld())
+			{
+				targetDirection = (MyPawn->GetCursorToWorld()->GetComponentLocation() - MyPawn->GetActorLocation()).Rotation();
+				targetDirection.Pitch = 0;
+			}
+
+			// Set MuzzleOffset to spawn projectiles slightly in front of the camera.
+			FVector SpawnOffset(50.0f, 0.0f, 50.0f);
+
+			// Transform MuzzleOffset from camera space to world space.
+			FVector ThrowingHandLocation = MyPawn->GetActorLocation() + FTransform(targetDirection).TransformVector(SpawnOffset);
+
+			UWorld* World = GetWorld();
+			if (World)
+			{
+				FActorSpawnParameters SpawnParams;
+				SpawnParams.Owner = MyPawn;
+				SpawnParams.Instigator = MyPawn->GetInstigator();
+
+				// Spawn the projectile at the muzzle.
+				AProjectile* Projectile = World->SpawnActor<AProjectile>(MyPawn->ProjectileClass, ThrowingHandLocation, targetDirection, SpawnParams);
+				if (Projectile)
+				{
+					// Set the projectile's initial trajectory.
+					FVector LaunchDirection = targetDirection.Vector();
+					Projectile->ThrowInDirection(LaunchDirection);
+				}
+			}
+		}
+	}
 }

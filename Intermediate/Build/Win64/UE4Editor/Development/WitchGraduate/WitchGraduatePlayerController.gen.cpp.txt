@@ -1,5 +1,0 @@
-D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Development\WitchGraduate\Definitions.WitchGraduate.h
-D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:\Documents\Projects\WitchGraduate\Source\WitchGraduate/WitchGraduatePlayerController.h
-D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Inc\WitchGraduate\WitchGraduatePlayerController.generated.h

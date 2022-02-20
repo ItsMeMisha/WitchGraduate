@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Projectile.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "WitchGraduateCharacter.generated.h"
@@ -10,6 +11,8 @@ UCLASS(Blueprintable)
 class AWitchGraduateCharacter : public ACharacter
 {
 	GENERATED_BODY()
+
+
 
 public:
 	AWitchGraduateCharacter();
@@ -24,6 +27,10 @@ public:
 	/** Returns CursorToWorld subobject **/
 	FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
 
+
+	UPROPERTY(EditAnywhere, Category = Projectile)
+	UClass* ProjectileClass;
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -36,5 +43,11 @@ private:
 	/** A decal that projects to the cursor location. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UDecalComponent* CursorToWorld;
+
+	/** Mesh*/
+	UPROPERTY(VisibleAnywhere)
+	USkeletalMeshComponent* VisualMesh;
+
+
 };
 
