@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define WITCHGRADUATE_Enemy_generated_h
 
 #define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_SPARSE_DATA
-#define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_RPC_WRAPPERS
-#define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execUpdateWalkSpeed);
+
+
+#define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execUpdateWalkSpeed);
+
+
 #define WitchGraduate_Source_WitchGraduate_Public_Enemy_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemy(); \

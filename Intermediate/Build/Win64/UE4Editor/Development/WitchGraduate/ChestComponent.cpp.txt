@@ -1,0 +1,3 @@
+D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Development\WitchGraduate\Definitions.WitchGraduate.h
+D:\Documents\Projects\WitchGraduate\Source\WitchGraduate\Public\ChestComponent.h
+D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Inc\WitchGraduate\ChestComponent.generated.h

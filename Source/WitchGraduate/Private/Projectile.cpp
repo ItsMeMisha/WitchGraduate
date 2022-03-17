@@ -2,6 +2,7 @@
 
 
 #include "Projectile.h"
+#include "Enemy.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -81,6 +82,13 @@ void AProjectile::ThrowInDirection(FVector direction)
 
 // Called on hit
 void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit) {
+
+	AEnemy* enemy = Cast<AEnemy>(OtherActor);
+	if (enemy) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("hit enemy"));
+		enemy->Hp -= 1;
+	}
+
 	if (OtherActor != this && OtherComponent->IsSimulatingPhysics()) {
 		OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
 	}

@@ -17,9 +17,62 @@ void EmptyLinkFunctionForGeneratedCodeEnemyAIController() {}
 	WITCHGRADUATE_API UClass* Z_Construct_UClass_AEnemyAIController();
 	AIMODULE_API UClass* Z_Construct_UClass_AAIController();
 	UPackage* Z_Construct_UPackage__Script_WitchGraduate();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	AIMODULE_API UScriptStruct* Z_Construct_UScriptStruct_FAIStimulus();
+	AIMODULE_API UClass* Z_Construct_UClass_UAISenseConfig_Sight_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AEnemyAIController::execOnSpotEnemy)
+	{
+		P_GET_OBJECT(AActor,Z_Param_Actor);
+		P_GET_STRUCT(FAIStimulus,Z_Param_Stimulus);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnSpotEnemy(Z_Param_Actor,Z_Param_Stimulus);
+		P_NATIVE_END;
+	}
 	void AEnemyAIController::StaticRegisterNativesAEnemyAIController()
 	{
+		UClass* Class = AEnemyAIController::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "OnSpotEnemy", &AEnemyAIController::execOnSpotEnemy },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics
+	{
+		struct EnemyAIController_eventOnSpotEnemy_Parms
+		{
+			AActor* Actor;
+			FAIStimulus Stimulus;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Actor;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Stimulus;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::NewProp_Actor = { "Actor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(EnemyAIController_eventOnSpotEnemy_Parms, Actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::NewProp_Stimulus = { "Stimulus", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(EnemyAIController_eventOnSpotEnemy_Parms, Stimulus), Z_Construct_UScriptStruct_FAIStimulus, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::NewProp_Actor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::NewProp_Stimulus,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/EnemyAIController.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyAIController, nullptr, "OnSpotEnemy", nullptr, nullptr, sizeof(EnemyAIController_eventOnSpotEnemy_Parms), Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AEnemyAIController_NoRegister()
 	{
@@ -28,15 +81,24 @@ void EmptyLinkFunctionForGeneratedCodeEnemyAIController() {}
 	struct Z_Construct_UClass_AEnemyAIController_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_sightConfig_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_sightConfig;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_AEnemyAIController_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AAIController,
 		(UObject* (*)())Z_Construct_UPackage__Script_WitchGraduate,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyAIController_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AEnemyAIController_OnSpotEnemy, "OnSpotEnemy" }, // 1244527244
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyAIController_Statics::Class_MetaDataParams[] = {
@@ -46,6 +108,16 @@ void EmptyLinkFunctionForGeneratedCodeEnemyAIController() {}
 		{ "ModuleRelativePath", "Public/EnemyAIController.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyAIController_Statics::NewProp_sightConfig_MetaData[] = {
+		{ "Category", "AI" },
+		{ "ModuleRelativePath", "Public/EnemyAIController.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyAIController_Statics::NewProp_sightConfig = { "sightConfig", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemyAIController, sightConfig), Z_Construct_UClass_UAISenseConfig_Sight_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyAIController_Statics::NewProp_sightConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyAIController_Statics::NewProp_sightConfig_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyAIController_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyAIController_Statics::NewProp_sightConfig,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyAIController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyAIController>::IsAbstract,
 	};
@@ -54,12 +126,12 @@ void EmptyLinkFunctionForGeneratedCodeEnemyAIController() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
-		nullptr,
+		FuncInfo,
+		Z_Construct_UClass_AEnemyAIController_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyAIController_Statics::PropPointers),
 		0,
 		0x009002A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AEnemyAIController_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyAIController_Statics::Class_MetaDataParams))
@@ -73,7 +145,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyAIController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemyAIController, 2924348462);
+	IMPLEMENT_CLASS(AEnemyAIController, 2647313866);
 	template<> WITCHGRADUATE_API UClass* StaticClass<AEnemyAIController>()
 	{
 		return AEnemyAIController::StaticClass();

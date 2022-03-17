@@ -79,9 +79,12 @@ AWitchGraduateCharacter::AWitchGraduateCharacter()
 	Anim = anim.Object;
 	Anim->SetSkeleton(ManVisualAsset.Object->Skeleton); */
 
-	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> AnimObj(TEXT("AnimBlueprint'/Game/Animations/Example.Example'"));
+	ConstructorHelpers::FObjectFinder<UAnimBlueprint> AnimObj(TEXT("AnimBlueprint'/Game/Animations/Example.Example'"));
 	VisualMesh->SetAnimationMode(EAnimationMode::AnimationBlueprint);
 	VisualMesh->SetAnimInstanceClass(AnimObj.Object->GeneratedClass);
+
+	//Tag
+	Tags.AddUnique(FName(TEXT("Player")));
 }
 
 void AWitchGraduateCharacter::Tick(float DeltaSeconds)
