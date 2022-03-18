@@ -127,7 +127,7 @@ void AWitchGraduatePlayerController::OnThrowProjectile() {
 			if (MyPawn->GetCursorToWorld())
 			{
 				targetDirection = (MyPawn->GetCursorToWorld()->GetComponentLocation() - MyPawn->GetActorLocation()).Rotation();
-				targetDirection.Pitch = 0;
+				targetDirection.Pitch = 0.0f;
 			}
 
 			// Set MuzzleOffset to spawn projectiles slightly in front of the camera.
@@ -135,6 +135,7 @@ void AWitchGraduatePlayerController::OnThrowProjectile() {
 
 			// Transform MuzzleOffset from camera space to world space.
 			FVector ThrowingHandLocation = MyPawn->GetActorLocation() + FTransform(targetDirection).TransformVector(SpawnOffset);
+			targetDirection.Pitch = 45.0f;
 
 			UWorld* World = GetWorld();
 			if (World)

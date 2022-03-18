@@ -3,10 +3,10 @@
 
 #include "Locks.h"
 
-Locks::Locks()
+FLocks::FLocks()
 {
 }
 
-Locks::~Locks()
+FLocks::~FLocks()
 {
 }

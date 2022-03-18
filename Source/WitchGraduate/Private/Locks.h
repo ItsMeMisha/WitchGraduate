@@ -7,14 +7,14 @@
 /**
  * 
  */
-class Locks
+class FLocks
 {
 public:
-	enum LockType {
+	enum ELockType {
 		None = 0,
 		Lockpick
 	};
 
-	Locks();
-	~Locks();
+	FLocks();
+	~FLocks();
 };

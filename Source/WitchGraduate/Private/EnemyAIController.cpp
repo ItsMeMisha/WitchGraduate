@@ -3,15 +3,17 @@
 
 #include "EnemyAIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
-#include "BehaviorTree/BehaviorTreeComponent.h"
-#include "BehaviorTree/BehaviorTree.h"
+
+#include "Enemy.h"
 #include "Perception/AIPerceptionComponent.h"
 
 
 
 AEnemyAIController::AEnemyAIController() {
 	bStartAILogicOnPossess = true;
-
+	BehaviorComp = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorComp"));
+	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackBoardComp"));
+	/*
 	//Behavior tree init
 	static ConstructorHelpers::FObjectFinder<UBehaviorTree> btAsset(TEXT("BehaviorTree'/Game/AI/BasicEnemyAI.BasicEnemyAI'"));
 	if (btAsset.Succeeded()) {
@@ -36,43 +38,16 @@ AEnemyAIController::AEnemyAIController() {
 	else {
 		UE_LOG(LogTemp, Error, TEXT("BB NOT FOUND"));
 	}
-
-	/*
-	SpotEnemyDelegate.BindUFunction(this, FName(TEXT("OnSpotEnemy")));
-	PerceptionComponent->OnTargetPerceptionUpdated.Add(onSpotEnemyDelegate);*/
-	PerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("PerceptionComponent"));
-	PerceptionComponent->RegisterComponent();
-	sightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("Sight config"));
-	sightConfig->SightRadius = 500.0f;
-	sightConfig->LoseSightRadius = 520.0f;
-	sightConfig->PeripheralVisionAngleDegrees = 359.0f; //damn
-	sightConfig->DetectionByAffiliation.bDetectEnemies = true;
-	sightConfig->DetectionByAffiliation.bDetectNeutrals = true;
-	sightConfig->DetectionByAffiliation.bDetectFriendlies = true;
-
-
-	UE_LOG(LogTemp, Warning, TEXT("Set sight configs"));
-	UE_LOG(LogTemp, Warning, TEXT("Listener id is valid %d"), PerceptionComponent->GetListenerId().IsValid());
-	UE_LOG(LogTemp, Warning, TEXT("Listener is pending kill %d"), PerceptionComponent->IsPendingKill());
-	if (UWorld* world = GetWorld()) {
-		UE_LOG(LogTemp, Warning, TEXT("Valid world"));
-		if (UAIPerceptionSystem* percSys = UAIPerceptionSystem::GetCurrent(*world)) {
-			UE_LOG(LogTemp, Warning, TEXT("Valid perception system"));
-			percSys->UpdateListener(*PerceptionComponent);
-			UE_LOG(LogTemp, Warning, TEXT("Listener id is valid after update %d"), PerceptionComponent->GetListenerId().IsValid());
-		}
-	}
-	PerceptionComponent->ConfigureSense(*sightConfig);
-	PerceptionComponent->SetDominantSense(sightConfig->GetSenseImplementation());
+	*/
 
 }
 
 void AEnemyAIController::BeginPlay() {
 
-	UE_LOG(LogTemp, Warning, TEXT("BeginPlay enemy"));
-//	SpotEnemyDelegate.BindUFunction(this, FName(TEXT("OnSpotEnemy")));
-	PerceptionComponent->OnTargetPerceptionUpdated.AddDynamic(this, &AEnemyAIController::OnSpotEnemy);
+	UE_LOG(LogTemp, Warning, TEXT("BeginPlay enemy controller"));
+
 	Super::BeginPlay();
+
 }
 
 void AEnemyAIController::Tick(float DeltaSeconds) {
@@ -88,28 +63,36 @@ void AEnemyAIController::Tick(float DeltaSeconds) {
 }
 
 void AEnemyAIController::OnPossess(APawn* InPawn) {
+
 	UE_LOG(LogTemp, Warning, TEXT("Trying to possess pawn %p"), InPawn);
 	Super::OnPossess(InPawn);
 
-	BeginPlay();
-	if (!UAIPerceptionSystem::RegisterPerceptionStimuliSource(this, sightConfig->GetSenseImplementation(), InPawn)) {
-		UE_LOG(LogTemp, Error, TEXT("Failed register stimulisource"));
+	AEnemy* pawn = Cast<AEnemy>(InPawn);
+	if (pawn) {
+		if (pawn->behTree) {
+			behaviorTree = pawn->behTree;
+		}
+		if (behaviorTree->BlackboardAsset && BlackboardComp->InitializeBlackboard(*(behaviorTree->BlackboardAsset))) {
+			UE_LOG(LogTemp, Warning, TEXT("BB Connected"));
+		}
+		else {
+			UE_LOG(LogTemp, Error, TEXT("BB NOT CONNECTED"));
+		}
 	}
-	//UE_LOG(LogTemp, Warning, TEXT("Set sight configs 2"));
-	//PerceptionComponent->ConfigureSense(*sightConfig);
-	//RunBehaviorTree(behaviorTree);
+
+	RunBehaviorTree(behaviorTree);
 }
 
-void AEnemyAIController::OnSpotEnemy(AActor* Actor, FAIStimulus Stimulus) {
-	UE_LOG(LogTemp, Warning, TEXT("OnSpotEnemy called"));
-	if (Actor->ActorHasTag(FName(TEXT("Player"))) && Stimulus.WasSuccessfullySensed()) {
-		GetBlackboardComponent()->SetValueAsBool(FName(TEXT("HasLineOfSight")), true);
-		GetBlackboardComponent()->SetValueAsObject(FName(TEXT("EnemyActor")), Actor);
+void AEnemyAIController::OnSpotEnemy(AActor* Actor) {
+	UE_LOG(LogTemp, Warning, TEXT("OnSpotEnemy controller called"));
+	if (Actor->ActorHasTag(FName(TEXT("Player")))) {
+		BlackboardComp->SetValueAsBool(FName(TEXT("HasLineOfSight")), true);
+		BlackboardComp->SetValueAsObject(FName(TEXT("EnemyActor")), Actor);
 		UE_LOG(LogTemp, Warning, TEXT("Spotted"));
 	}
 	else {
-		GetBlackboardComponent()->SetValueAsBool(FName(TEXT("HasLineOfSight")), false);
-		GetBlackboardComponent()->SetValueAsObject(FName(TEXT("EnemyActor")), nullptr);
+		BlackboardComp->SetValueAsBool(FName(TEXT("HasLineOfSight")), false);
+		BlackboardComp->SetValueAsObject(FName(TEXT("EnemyActor")), nullptr);
 	}
 }
 

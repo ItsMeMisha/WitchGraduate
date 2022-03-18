@@ -6,6 +6,8 @@
 #include "AIController.h"
 #include "Perception/AIPerceptionTypes.h"
 #include "Perception/AISenseConfig_Sight.h"
+#include "BehaviorTree/BehaviorTreeComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "EnemyAIController.generated.h"
 
 /**
@@ -25,11 +27,15 @@ public:
 
 private:
 	UBehaviorTree* behaviorTree;
+	UBehaviorTreeComponent* BehaviorComp;
+	UBlackboardComponent* BlackboardComp;
+
+
 //	FScriptDelegate SpotEnemyDelegate;
 
-protected:
+public:
 	UFUNCTION()
-	void OnSpotEnemy(AActor* Actor, FAIStimulus Stimulus);
+	void OnSpotEnemy(AActor* Actor);
 
 	UPROPERTY(VisibleAnywhere, Category = AI)
 	UAISenseConfig_Sight* sightConfig;

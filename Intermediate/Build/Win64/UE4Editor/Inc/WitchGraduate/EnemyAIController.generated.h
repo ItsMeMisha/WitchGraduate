@@ -9,24 +9,23 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
-struct FAIStimulus;
 #ifdef WITCHGRADUATE_EnemyAIController_generated_h
 #error "EnemyAIController.generated.h already included, missing '#pragma once' in EnemyAIController.h"
 #endif
 #define WITCHGRADUATE_EnemyAIController_generated_h
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_SPARSE_DATA
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_RPC_WRAPPERS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_SPARSE_DATA
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnSpotEnemy);
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnSpotEnemy);
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_INCLASS_NO_PURE_DECLS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemyAIController(); \
 	friend struct Z_Construct_UClass_AEnemyAIController_Statics; \
@@ -35,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AEnemyAIController)
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_INCLASS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_INCLASS \
 private: \
 	static void StaticRegisterNativesAEnemyAIController(); \
 	friend struct Z_Construct_UClass_AEnemyAIController_Statics; \
@@ -44,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(AEnemyAIController)
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_STANDARD_CONSTRUCTORS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEnemyAIController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemyAIController) \
@@ -57,7 +56,7 @@ private: \
 public:
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_ENHANCED_CONSTRUCTORS \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemyAIController(AEnemyAIController&&); \
@@ -68,31 +67,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEnemyAIController)
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__sightConfig() { return STRUCT_OFFSET(AEnemyAIController, sightConfig); }
-
-
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_14_PROLOG
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_GENERATED_BODY_LEGACY \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_PRIVATE_PROPERTY_OFFSET
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_16_PROLOG
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_SPARSE_DATA \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_RPC_WRAPPERS \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_INCLASS \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_STANDARD_CONSTRUCTORS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_PRIVATE_PROPERTY_OFFSET \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_SPARSE_DATA \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_RPC_WRAPPERS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_INCLASS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_GENERATED_BODY \
+#define WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_SPARSE_DATA \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_INCLASS_NO_PURE_DECLS \
-	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_17_ENHANCED_CONSTRUCTORS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_PRIVATE_PROPERTY_OFFSET \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_SPARSE_DATA \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_INCLASS_NO_PURE_DECLS \
+	WitchGraduate_Source_WitchGraduate_Public_EnemyAIController_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTreeComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "Enemy.generated.h"
 
 UCLASS()
@@ -36,4 +39,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Movement)
 	void UpdateWalkSpeed(float NewWalkSpeed);
+
+
+	UBehaviorTree* behTree;
+	UBlackboardData* blackbrd;
+
+	UPROPERTY(VisibleAnywhere, Category = "AI")
+	class UPawnSensingComponent* PawnSensingComp;
+
+	UFUNCTION()
+	void OnSpotEnemy(APawn* Pawn);
 };

@@ -33,7 +33,7 @@ AProjectile::AProjectile()
 		ProjectileMovementComponent->bRotationFollowsVelocity = true;
 		ProjectileMovementComponent->bShouldBounce = true;
 		ProjectileMovementComponent->Bounciness = 0.3f;
-		ProjectileMovementComponent->ProjectileGravityScale = 0.0f;
+		ProjectileMovementComponent->ProjectileGravityScale = 1.0f;
 	}
 
 	//for mesh
