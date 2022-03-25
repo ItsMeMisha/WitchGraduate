@@ -28,12 +28,12 @@ AProjectile::AProjectile()
 		// Use this component to drive this projectile's movement.
 		ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 		ProjectileMovementComponent->SetUpdatedComponent(CollisionComponent);
-		ProjectileMovementComponent->InitialSpeed = 750.0f;
-		ProjectileMovementComponent->MaxSpeed = 750.0f;
+		ProjectileMovementComponent->InitialSpeed = 1000.0f;
+		ProjectileMovementComponent->MaxSpeed = 1000.0f;
 		ProjectileMovementComponent->bRotationFollowsVelocity = true;
 		ProjectileMovementComponent->bShouldBounce = true;
 		ProjectileMovementComponent->Bounciness = 0.3f;
-		ProjectileMovementComponent->ProjectileGravityScale = 1.0f;
+		ProjectileMovementComponent->ProjectileGravityScale = 0.3f;
 	}
 
 	//for mesh

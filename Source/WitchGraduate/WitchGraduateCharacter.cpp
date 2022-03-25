@@ -85,6 +85,9 @@ AWitchGraduateCharacter::AWitchGraduateCharacter()
 
 	//Tag
 	Tags.AddUnique(FName(TEXT("Player")));
+
+	//Inventory
+	Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("Inventory"));
 }
 
 void AWitchGraduateCharacter::Tick(float DeltaSeconds)

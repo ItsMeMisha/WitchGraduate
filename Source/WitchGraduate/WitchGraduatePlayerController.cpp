@@ -7,12 +7,16 @@
 #include "WitchGraduateCharacter.h"
 #include "Engine/World.h"
 #include "Projectile.h"
+#include "Chest.h"
 
-#include <cstdio>
 
 AWitchGraduatePlayerController::AWitchGraduatePlayerController()
 {
 	bShowMouseCursor = true;
+	bEnableMouseOverEvents = true;
+	bEnableClickEvents = true;
+	cursorState = OnField;
+	actorUnderCursor = nullptr;
 	DefaultMouseCursor = EMouseCursor::Crosshairs;
 }
 
@@ -36,13 +40,13 @@ void AWitchGraduatePlayerController::SetupInputComponent()
 	InputComponent->BindAction("SetDestination", IE_Released, this, &AWitchGraduatePlayerController::OnSetDestinationReleased);
 
 	// support touch devices 
-	InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AWitchGraduatePlayerController::MoveToTouchLocation);
+	/*InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AWitchGraduatePlayerController::MoveToTouchLocation);
 	InputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AWitchGraduatePlayerController::MoveToTouchLocation);
 
-	InputComponent->BindAction("ResetVR", IE_Pressed, this, &AWitchGraduatePlayerController::OnResetVR);
+	InputComponent->BindAction("ResetVR", IE_Pressed, this, &AWitchGraduatePlayerController::OnResetVR);*/
 
 	// throwing Projectile
-	InputComponent->BindAction("ThrowProjectile", IE_Pressed, this, &AWitchGraduatePlayerController::OnThrowProjectile);
+	InputComponent->BindAction("MainAction", IE_Pressed, this, &AWitchGraduatePlayerController::OnMainAction);
 }
 
 void AWitchGraduatePlayerController::OnResetVR()
@@ -135,7 +139,7 @@ void AWitchGraduatePlayerController::OnThrowProjectile() {
 
 			// Transform MuzzleOffset from camera space to world space.
 			FVector ThrowingHandLocation = MyPawn->GetActorLocation() + FTransform(targetDirection).TransformVector(SpawnOffset);
-			targetDirection.Pitch = 45.0f;
+			//targetDirection.Pitch = 45.0f;
 
 			UWorld* World = GetWorld();
 			if (World)
@@ -154,5 +158,27 @@ void AWitchGraduatePlayerController::OnThrowProjectile() {
 				}
 			}
 		}
+	}
+}
+
+void AWitchGraduatePlayerController::OnOpenChest() {
+	if (actorUnderCursor) {
+		AChest* chest = Cast<AChest>(actorUnderCursor);
+		if (chest) {
+			UInventoryComponent* inventory = chest->Open(nullptr);
+			if (inventory) {
+				UE_LOG(LogTemp, Warning, TEXT("Chest opened!"));
+			}
+		}
+	}
+}
+
+void AWitchGraduatePlayerController::OnMainAction() {
+	switch (cursorState) {
+	case OnField:
+		OnThrowProjectile();
+
+	case OnChest:
+		OnOpenChest();
 	}
 }

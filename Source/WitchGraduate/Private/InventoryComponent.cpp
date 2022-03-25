@@ -32,3 +32,21 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+void UInventoryComponent::Add(UItem& item) {
+	Contents.Add(&item);
+}
+
+void UInventoryComponent::AddUnique(UItem& item) {
+	Contents.AddUnique(&item);
+}
+
+template <class UItemChild>
+bool UInventoryComponent::Contains(UItemChild& item) {
+	UItem* baseItem = Cast<UItem>(&item);
+	if (baseItem) {
+		COntainsPredicate<UItemChild> pred;
+		return Contents.ContainsByPredicate(pred);
+	}
+
+	return false;
+}

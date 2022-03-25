@@ -14,6 +14,13 @@ class AWitchGraduatePlayerController : public APlayerController
 public:
 	AWitchGraduatePlayerController();
 
+	enum ECursorState {
+		OnField = 0,
+		OnChest
+	};
+
+	ECursorState cursorState;
+	AActor* actorUnderCursor;
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
@@ -41,6 +48,12 @@ protected:
 
 	/** Handler for ThrowProjectile action. */
 	void OnThrowProjectile();
+
+	/** For main actions: attacking, opening chests, doors. */
+	void OnMainAction();
+
+	/** Handler for opening chest. */
+	void OnOpenChest();
 };
 
 
