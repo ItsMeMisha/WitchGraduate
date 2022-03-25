@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 	UPackage* Z_Construct_UPackage__Script_WitchGraduate();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
+	WITCHGRADUATE_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UDecalComponent_NoRegister();
@@ -41,6 +42,10 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Inventory_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Inventory;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TopDownCameraComponent_MetaData[];
 #endif
@@ -81,6 +86,14 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_ProjectileClass = { "ProjectileClass", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWitchGraduateCharacter, ProjectileClass), Z_Construct_UClass_UObject_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_ProjectileClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_ProjectileClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_Inventory_MetaData[] = {
+		{ "Category", "WitchGraduateCharacter" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "WitchGraduateCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_Inventory = { "Inventory", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWitchGraduateCharacter, Inventory), Z_Construct_UClass_UInventoryComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_Inventory_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_Inventory_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_TopDownCameraComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -126,6 +139,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_VisualMesh = { "VisualMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWitchGraduateCharacter, VisualMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_VisualMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_VisualMesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWitchGraduateCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_ProjectileClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_Inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_TopDownCameraComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWitchGraduateCharacter_Statics::NewProp_CursorToWorld,
@@ -158,7 +172,7 @@ void EmptyLinkFunctionForGeneratedCodeWitchGraduateCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWitchGraduateCharacter, 3646846487);
+	IMPLEMENT_CLASS(AWitchGraduateCharacter, 465994900);
 	template<> WITCHGRADUATE_API UClass* StaticClass<AWitchGraduateCharacter>()
 	{
 		return AWitchGraduateCharacter::StaticClass();

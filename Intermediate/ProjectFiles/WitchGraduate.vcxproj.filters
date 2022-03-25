@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\WitchGraduate.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E33A8DC4-1738-4B24-8811-037583B18FC4}</UniqueIdentifier>
+      <UniqueIdentifier>{C4E5308B-9B07-40A8-8D8C-E4C09D501058}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\WitchGraduate.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{21E2327C-8BEF-40B8-8CC2-F24BE0C1BBCC}</UniqueIdentifier>
+      <UniqueIdentifier>{A4F88125-5D98-4070-B985-DF33F4E730C0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\WitchGraduate">
-      <UniqueIdentifier>{1064A551-5CEF-4539-9086-4350316AA5C1}</UniqueIdentifier>
+      <UniqueIdentifier>{B752780F-B9F3-4E63-8CE4-870B1577D0C8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\WitchGraduate\WitchGraduate.Build.cs">
       <Filter>Source\WitchGraduate</Filter>
@@ -62,8 +62,11 @@
       <Filter>Source\WitchGraduate</Filter>
     </ClInclude>
     <Filter Include="Source\WitchGraduate\Private">
-      <UniqueIdentifier>{8BBC06E0-AADA-4333-9A76-2A625E35BB18}</UniqueIdentifier>
+      <UniqueIdentifier>{0BD5D878-849E-43A2-989B-217A90D38E6B}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\WitchGraduate\Private\Chest.cpp">
+      <Filter>Source\WitchGraduate\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WitchGraduate\Private\Enemy.cpp">
       <Filter>Source\WitchGraduate\Private</Filter>
     </ClCompile>
@@ -73,18 +76,21 @@
     <ClCompile Include="..\..\Source\WitchGraduate\Private\InventoryComponent.cpp">
       <Filter>Source\WitchGraduate\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\WitchGraduate\Private\Locks.cpp">
+    <ClCompile Include="..\..\Source\WitchGraduate\Private\Item.cpp">
       <Filter>Source\WitchGraduate\Private</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\WitchGraduate\Private\Locks.h">
+    <ClCompile Include="..\..\Source\WitchGraduate\Private\Lock.cpp">
       <Filter>Source\WitchGraduate\Private</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WitchGraduate\Private\Projectile.cpp">
       <Filter>Source\WitchGraduate\Private</Filter>
     </ClCompile>
     <Filter Include="Source\WitchGraduate\Public">
-      <UniqueIdentifier>{BFA96DA3-56A9-41AC-9D0B-C17BA024679F}</UniqueIdentifier>
+      <UniqueIdentifier>{D8419372-0DBF-48B2-9543-00016B0F5614}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\WitchGraduate\Public\Chest.h">
+      <Filter>Source\WitchGraduate\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\WitchGraduate\Public\Enemy.h">
       <Filter>Source\WitchGraduate\Public</Filter>
     </ClInclude>
@@ -94,7 +100,18 @@
     <ClInclude Include="..\..\Source\WitchGraduate\Public\InventoryComponent.h">
       <Filter>Source\WitchGraduate\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\WitchGraduate\Public\Item.h">
+      <Filter>Source\WitchGraduate\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\WitchGraduate\Public\Lock.h">
+      <Filter>Source\WitchGraduate\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\WitchGraduate\Public\Projectile.h">
+      <Filter>Source\WitchGraduate\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\WitchGraduate\Public\LockType.h">
       <Filter>Source\WitchGraduate\Public</Filter>
     </ClInclude>
   </ItemGroup>

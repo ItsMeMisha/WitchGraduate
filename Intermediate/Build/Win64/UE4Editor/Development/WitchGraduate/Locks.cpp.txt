@@ -1,2 +1,0 @@
-D:\Documents\Projects\WitchGraduate\Intermediate\Build\Win64\UE4Editor\Development\WitchGraduate\Definitions.WitchGraduate.h
-D:\Documents\Projects\WitchGraduate\Source\WitchGraduate\Private\Locks.h
