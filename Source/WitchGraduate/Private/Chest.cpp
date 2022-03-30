@@ -23,8 +23,8 @@ AChest::AChest()
 	}
 
 	// Inventory component
-	Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("Inventory Component"));
-	Lock = CreateDefaultSubobject<ULock>(TEXT("Lock"));
+	Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	Lock = CreateDefaultSubobject<ULockComponent>(TEXT("LockComponent"));
 }
 
 // Called when the game starts or when spawned
@@ -44,8 +44,6 @@ void AChest::Tick(float DeltaTime)
 }
 
 UInventoryComponent* AChest::Open(UItem* Unlocker) {
-	//for controller debug
-	return Inventory;
 
 	if (Unlocker) {
 		if (Lock->TryUnlock(Unlocker->UnlockerType)) {
@@ -55,6 +53,7 @@ UInventoryComponent* AChest::Open(UItem* Unlocker) {
 			return nullptr;
 		}
 	}
+	return nullptr;
 }
 
 void AChest::OnCursorOverBegin(AActor* TouchedActor) {

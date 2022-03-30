@@ -17,7 +17,7 @@ class WITCHGRADUATE_API ULock : public UObject
 
 public:	
 	
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	ELockType lockType;
 
 	bool TryUnlock(/*UnlockerType*/ELockType Unlocker);

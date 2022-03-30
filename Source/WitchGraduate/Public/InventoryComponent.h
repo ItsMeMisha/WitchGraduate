@@ -19,12 +19,10 @@ public:
 	// Sets default values for this component's properties
 	UInventoryComponent();
 
-	template <class UItemChild>
-	struct COntainsPredicate {
-		// Predicate that checks if item is concrete child class of Item
-		bool operator() (UItem* item) {
-			UItemChiled* itemCheck = Cast<UItemChild>(item);
-			return itemCheck;
+	struct ContainsPredicate {
+		UItem* compareItem;
+		bool operator() (const UItem* item) {
+			return *compareItem == *item;
 		}
 	};
 
@@ -36,13 +34,19 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
 	int32 size;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Inventory)
 	TArray<UItem*> Contents;
 
+	UFUNCTION()
 	void Add(UItem& item);
+
+	UFUNCTION()
 	void AddUnique(UItem& item);
 
-	template <class UItemChild>
-	bool Contains(UItemChild& item);
+	UFUNCTION()
+	bool Contains(UItem& item);
+
 };

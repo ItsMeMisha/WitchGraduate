@@ -3,7 +3,7 @@
 #pragma once
 
 #include "InventoryComponent.h"
-#include "Lock.h"
+#include "LockComponent.h"
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
@@ -27,7 +27,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(VisibleAnywhere)
-	ULock* Lock;
+	ULockComponent* Lock;
 
 	UInventoryComponent* Open(UItem* Unlocker);
 

@@ -8,5 +8,5 @@ ULock::ULock() {
 }
 
 bool ULock::TryUnlock(/*UnlockerType*/ ELockType Unlocker) {
-	return true;
+	return lockType == Unlocker;
 }

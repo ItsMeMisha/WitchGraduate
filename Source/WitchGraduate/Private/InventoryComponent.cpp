@@ -40,13 +40,8 @@ void UInventoryComponent::AddUnique(UItem& item) {
 	Contents.AddUnique(&item);
 }
 
-template <class UItemChild>
-bool UInventoryComponent::Contains(UItemChild& item) {
-	UItem* baseItem = Cast<UItem>(&item);
-	if (baseItem) {
-		COntainsPredicate<UItemChild> pred;
-		return Contents.ContainsByPredicate(pred);
-	}
-
-	return false;
+bool UInventoryComponent::Contains(UItem& item) {
+	ContainsPredicate pred;
+	pred.compareItem = &item;
+	return Contents.ContainsByPredicate(pred);
 }
